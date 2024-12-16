@@ -1,0 +1,308 @@
+.whitepaper-page {
+    background: transparent;
+    min-height: 100vh;
+    color: var(--text-primary);
+    overflow-x: hidden;
+}
+
+.whitepaper-container {
+    display: flex;
+    padding-top: 80px;
+    min-height: calc(100vh - 80px);
+}
+
+.sidebar {
+    width: 250px;
+    background: rgba(16, 22, 39, 0.7);
+    backdrop-filter: blur(10px);
+    border-right: 1px solid rgba(66, 103, 178, 0.2);
+    padding: 2rem;
+    position: fixed;
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+}
+
+.nav-menu {
+    list-style: none;
+}
+
+.nav-menu a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    padding: 0.5rem 0;
+    display: block;
+    transition: all 0.3s ease;
+}
+
+.nav-menu a:hover {
+    color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+.content {
+    margin-left: 250px;
+    padding: 3rem;
+    max-width: 1200px;
+    overflow-y: auto;
+    height: calc(100vh - 80px);
+}
+
+.content section {
+    background: rgba(16, 22, 39, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 12px;
+    padding: 3rem;
+    margin-bottom: 2rem;
+}
+
+.content h1 {
+    color: var(--text-primary);
+    font-size: 2.5rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+.content h2 {
+    color: var(--accent-color);
+    font-size: 1.8rem;
+    margin: 2rem 0 1rem;
+    letter-spacing: 0.1rem;
+}
+
+.content p {
+    color: var(--text-secondary);
+    line-height: 1.8;
+    margin-bottom: 1.5rem;
+}
+
+.info-box {
+    background: rgba(16, 22, 39, 0.7);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.info-box h3 {
+    color: var(--accent-color);
+    margin-bottom: 1rem;
+}
+
+.info-box ul {
+    list-style: none;
+}
+
+.info-box li {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.info-box li:before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: rgba(16, 22, 39, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(66, 103, 178, 0.2);
+    z-index: 1000;
+}
+
+.nav-left {
+    color: var(--text-primary);
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+}
+
+.nav-link {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.nav-link.active {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.component-grid, .parameter-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 2rem 0;
+}
+
+.component, .parameter {
+    background: rgba(16, 22, 39, 0.7);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.component:hover, .parameter:hover {
+    border-color: var(--accent-color);
+    transform: translateY(-2px);
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+        display: none;
+    }
+    
+    .content {
+        margin-left: 0;
+        padding: 2rem;
+    }
+    
+    .component-grid, .parameter-grid {
+        grid-template-columns: 1fr;
+    }
+} 
+
+/* Add/Update roadmap styles */
+.roadmap-timeline {
+    position: relative;
+    padding: 2rem 0;
+}
+
+.timeline-item {
+    background: rgba(16, 22, 39, 0.7);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    position: relative;
+    transition: all 0.3s ease;
+}
+
+.timeline-item:hover {
+    border-color: var(--accent-color);
+    transform: translateX(5px);
+}
+
+.timeline-item h4 {
+    color: var(--accent-color);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.timeline-item h4:before {
+    content: "";
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background: var(--accent-color);
+    border-radius: 50%;
+}
+
+.timeline-item ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.timeline-item ul li {
+    color: var(--text-secondary);
+    margin-bottom: 0.5rem;
+    padding-left: 1.5rem;
+    position: relative;
+}
+
+.timeline-item ul li:before {
+    content: "→";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+}
+
+/* Add a connecting line between timeline items */
+.roadmap-timeline:before {
+    content: "";
+    position: absolute;
+    left: 1rem;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: linear-gradient(to bottom, 
+        transparent,
+        var(--accent-color) 10%,
+        var(--accent-color) 90%,
+        transparent
+    );
+} 
+
+/* Add/Update tokenomics styles */
+.tokenomics-grid {
+    background: rgba(16, 22, 39, 0.7);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 8px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.token-info h3 {
+    color: var(--accent-color);
+    font-size: 1.3rem;
+    margin: 2rem 0 1rem;
+    letter-spacing: 0.1rem;
+}
+
+.token-info h3:first-child {
+    margin-top: 0;
+}
+
+.token-info ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.token-info ul li {
+    color: var(--text-secondary);
+    margin-bottom: 0.8rem;
+    padding-left: 1.5rem;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.token-info ul li:before {
+    content: "•";
+    color: var(--accent-color);
+    position: absolute;
+    left: 0;
+} 

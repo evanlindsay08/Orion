@@ -1,0 +1,628 @@
+/* Main page styles */
+body.main-page {
+    min-height: 100vh;
+    background: transparent;
+    color: white;
+    overflow-y: auto;
+    overflow-x: hidden;
+}
+
+.main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 1.5rem 2rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: rgba(16, 22, 39, 0.8);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(66, 103, 178, 0.2);
+    z-index: 100;
+}
+
+.nav-left {
+    color: var(--neon-green);
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+}
+
+.nav-links a {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    opacity: 0.6;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover, .nav-links a.active {
+    opacity: 1;
+    color: var(--accent-color);
+}
+
+.main-container {
+    padding: 0;
+    max-width: 1400px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+    overflow: visible;
+    padding-top: 80px;
+}
+
+.hero-section {
+    min-height: 80vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 0 2rem;
+    margin-bottom: 4rem;
+    background: rgba(16, 22, 39, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 12px;
+    padding: 2rem;
+    margin: 2rem 0;
+}
+
+.hero-section h1 {
+    font-size: 3.5rem;
+    color: white;
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    line-height: 1.2;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+}
+
+.hero-subtitle {
+    color: white;
+    opacity: 0.8;
+    font-size: 1.1rem;
+    margin-bottom: 3rem;
+    letter-spacing: 0.1rem;
+}
+
+.hero-buttons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    margin-bottom: 2rem;
+}
+
+.features-section {
+    background: rgba(65, 147, 106, 0.05);
+    padding: 3rem 4rem;
+    backdrop-filter: blur(10px);
+    position: relative;
+    z-index: 2;
+    border-radius: 12px;
+    margin: 0 2rem;
+}
+
+.features-section h2 {
+    color: var(--neon-green);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 4rem;
+    font-weight: 300;
+    letter-spacing: 0.2rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.feature-card {
+    background: rgba(16, 22, 39, 0.7);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+}
+
+.feature-card h3 {
+    color: var(--neon-green);
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+}
+
+.feature-card p {
+    color: white;
+    opacity: 0.8;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+    line-height: 1.6;
+}
+
+.feature-card .action-button {
+    background: rgba(65, 147, 106, 0.1);
+    border: 1.5px solid var(--neon-green);
+    color: var(--neon-green);
+    padding: 0.6rem 1.5rem;
+    font-size: 0.75rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.feature-card .action-button:hover {
+    background: var(--neon-green);
+    color: var(--dark-bg);
+}
+
+.social-button {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(66, 103, 178, 0.1);
+    border: 1px solid rgba(66, 103, 178, 0.3);
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0.6;
+    font-size: 1.2rem;
+}
+
+.social-button:hover {
+    opacity: 1;
+    background: rgba(66, 103, 178, 0.2);
+    border-color: var(--accent-color);
+}
+
+.purchase-button {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    border: none;
+    color: white;
+    padding: 0.8rem 2rem;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    border-radius: 4px;
+}
+
+.purchase-button:hover {
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+    transform: translateY(-2px);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 
+
+.advanced-features {
+    margin-top: 6rem;
+    padding: 0 2rem;
+}
+
+.feature-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 3rem;
+    margin-bottom: 4rem;
+}
+
+.feature-detail {
+    background: rgba(0, 0, 0, 0.2);
+    border: 1.5px solid rgba(65, 147, 106, 0.2);
+    border-radius: 8px;
+    padding: 2.5rem;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+}
+
+.feature-detail:hover {
+    border-color: var(--neon-green);
+    transform: translateY(-5px);
+}
+
+.feature-detail h3 {
+    color: var(--neon-green);
+    font-size: 1.4rem;
+    margin-bottom: 1.2rem;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+}
+
+.feature-detail p {
+    color: white;
+    opacity: 0.8;
+    font-size: 1rem;
+    line-height: 1.8;
+    letter-spacing: 0.05rem;
+}
+
+.section-divider {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 3rem;
+    gap: 1.5rem;
+}
+
+.section-divider .line {
+    height: 1px;
+    width: 100px;
+    background: linear-gradient(to right, transparent, var(--primary-color), transparent);
+}
+
+.section-divider i {
+    color: var(--accent-color);
+    font-size: 1.5rem;
+    opacity: 0.8;
+}
+
+.process-section {
+    padding: 6rem 6rem;
+    text-align: center;
+}
+
+.process-flow {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3rem;
+    margin-top: 4rem;
+}
+
+.process-step {
+    flex: 1;
+    max-width: 300px;
+}
+
+.process-icon {
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 1.5rem;
+    background: rgba(66, 103, 178, 0.1);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--accent-color);
+}
+
+.process-icon i {
+    font-size: 2.5rem;
+    color: var(--accent-color);
+}
+
+.process-arrow {
+    color: var(--primary-color);
+    opacity: 0.5;
+    font-size: 2rem;
+}
+
+.process-step h3 {
+    font-size: 1.3rem;
+    margin-bottom: 1rem;
+    color: var(--neon-green);
+}
+
+.process-step p {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: white;
+    opacity: 0.8;
+}
+
+.neural-architecture-section {
+    padding: 3rem 4rem;
+    text-align: center;
+    background: rgba(65, 147, 106, 0.05);
+    border-radius: 12px;
+    margin: 0 2rem;
+    margin-top: 4rem;
+}
+
+.neural-architecture-section .feature-grid {
+    margin-top: 3rem;
+}
+
+.neural-architecture-section .advanced-features {
+    margin-top: 8rem;
+}
+
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-top: 3rem;
+}
+
+.metric-card {
+    background: rgba(16, 22, 39, 0.7);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    animation: float 3s ease-in-out infinite;
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.metric-card:nth-child(1) {
+    animation-delay: 0s;
+}
+
+.metric-card:nth-child(2) {
+    animation-delay: 0.5s;
+}
+
+.metric-card:nth-child(3) {
+    animation-delay: 1s;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+.metric-card:hover {
+    animation-play-state: paused;
+    border-color: var(--accent-color);
+}
+
+.metric-card i {
+    font-size: 2.5rem;
+    color: var(--neon-green);
+    margin-bottom: 1rem;
+}
+
+.metric-card .metric-value {
+    font-size: 2rem;
+    color: var(--accent-color);
+    margin: 1rem 0;
+    font-weight: 300;
+}
+
+.initialization-section {
+    padding: 5rem 4.6rem;
+    text-align: center;
+    margin-bottom: 6rem;
+}
+
+.steps-container {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-top: 4.6rem;
+    align-items: center;
+}
+
+.step-box {
+    flex: 1;
+    max-width: 322px;
+    background: rgba(16, 22, 39, 0.7);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 8px;
+    padding: 1.5rem;
+    position: relative;
+    transition: all 0.3s ease;
+    animation: fadeInUp 0.5s ease forwards;
+    opacity: 0;
+}
+
+.step-box:hover {
+    transform: translateY(-5px);
+    border-color: var(--accent-color);
+    & + .step-arrow {
+        opacity: 0.8;
+        transform: translateY(-15px) scale(1.1);
+    }
+}
+
+.step-number {
+    position: absolute;
+    top: -15px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: var(--accent-color);
+    color: var(--dark-bg);
+    font-size: 0.8rem;
+    padding: 0.3rem 1rem;
+    border-radius: 15px;
+    font-weight: 500;
+    letter-spacing: 0.1rem;
+}
+
+.step-icon {
+    width: 80px;
+    height: 80px;
+    margin: 1rem auto 2rem;
+    background: rgba(66, 103, 178, 0.1);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--primary-color);
+}
+
+.step-icon i {
+    font-size: 2.1rem;
+    color: var(--primary-color);
+}
+
+.step-box h3 {
+    color: var(--neon-green);
+    font-size: 1.38rem;
+    margin-bottom: 1rem;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+}
+
+.step-box p {
+    color: white;
+    opacity: 0.8;
+    font-size: 1.035rem;
+    line-height: 1.6;
+} 
+
+.step-arrow {
+    color: var(--neon-green);
+    opacity: 0.5;
+    font-size: 1.725rem;
+    transform: translateY(-15px);
+    transition: all 0.3s ease;
+}
+
+.step-arrow i {
+    filter: drop-shadow(0 0 5px rgba(65, 147, 106, 0.3));
+} 
+
+.configure-button-container {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    margin: 0;
+}
+
+.configure-button {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    border: none;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    min-width: 250px;
+}
+
+.configure-button:hover {
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+    transform: translateY(-2px);
+} 
+
+/* Update spacing for main sections */
+.initialization-section,
+.process-section,
+.neural-architecture-section {
+    padding: 6rem 4rem;
+    margin: 2rem;
+    background: rgba(16, 22, 39, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 12px;
+}
+
+/* Fix section headings */
+.initialization-section h2,
+.process-section h2,
+.neural-architecture-section h2 {
+    color: var(--text-primary);
+    font-size: 2rem;
+    margin-bottom: 3rem;
+    letter-spacing: 0.2rem;
+    font-weight: 300;
+}
+
+/* Update configure button to match purchase button */
+.configure-button {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    border: none;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+    box-shadow: none;
+    backdrop-filter: none;
+}
+
+.configure-button:hover {
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+    transform: translateY(-2px);
+}
+
+/* Fix spacing for configure button container */
+.configure-button-container {
+    text-align: center;
+    position: relative;
+    z-index: 10;
+    margin: 0;
+}
+
+/* Update metrics grid */
+.metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin: 3rem 0;
+}
+
+/* Fix feature cards animation delays */
+.feature-card:nth-child(1) { animation-delay: 0.1s; }
+.feature-card:nth-child(2) { animation-delay: 0.2s; }
+.feature-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Fix step box animation delays */
+.step-box:nth-child(1) { animation-delay: 0.1s; }
+.step-box:nth-child(3) { animation-delay: 0.2s; }
+.step-box:nth-child(5) { animation-delay: 0.3s; }
+
+/* Fix metric card animation delays */
+.metric-card:nth-child(1) { animation-delay: 0.1s; }
+.metric-card:nth-child(2) { animation-delay: 0.2s; }
+.metric-card:nth-child(3) { animation-delay: 0.3s; }
+
+/* Add fadeInUp animation if not already present */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+} 

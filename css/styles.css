@@ -1,0 +1,139 @@
+:root {
+    --primary-color: #4267B2;     /* Deep Blue */
+    --accent-color: #00B4D8;      /* Bright Blue */
+    --background-dark: #101627;   /* Dark Blue */
+    --text-primary: #FFFFFF;      /* White */
+    --text-secondary: #B8C7E5;    /* Light Blue */
+    --success-color: #34D399;     /* Green */
+    --warning-color: #FBBF24;     /* Yellow */
+    --error-color: #EF4444;       /* Red */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', 'Helvetica Neue', Arial, sans-serif;
+}
+
+body {
+    background-color: var(--background-dark);
+    color: var(--text-primary);
+    line-height: 1.6;
+    overflow: hidden;
+    opacity: 0;
+    transition: opacity 0.1s ease;
+}
+
+body.loaded {
+    opacity: 1;
+}
+
+.hidden {
+    display: none !important;
+}
+
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-dark);
+    z-index: 1000;
+}
+
+#main-content {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: var(--background-dark);
+}
+
+.top-title {
+    position: fixed;
+    top: 1.2rem;
+    left: 1.2rem;
+    z-index: 1001;
+}
+
+.top-title h2 {
+    font-size: 0.8rem;
+    font-weight: 400;
+    letter-spacing: 0.1rem;
+    color: var(--text-primary);
+    display: flex;
+    align-items: center;
+}
+
+.terminal-icon {
+    font-size: 0.8rem;
+    margin-right: 0.2rem;
+}
+
+.typing-text {
+    position: relative;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: 2px solid var(--text-primary);
+    animation: blink 1s step-end;
+    animation-iteration-count: 4;
+}
+
+@keyframes blink {
+    from, to { border-color: transparent }
+    50% { border-color: var(--text-primary); }
+} 
+
+.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+.fade-in {
+    opacity: 0;
+    animation: fadeIn 1s forwards;
+    animation-delay: 0.5s;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+@keyframes fadeIn {
+    from { 
+        opacity: 0; 
+        transform: scale(0.98);
+    }
+    to { 
+        opacity: 1;
+        transform: scale(1);
+    }
+} 
+
+body.fade-out {
+    animation: fadeOut 1s forwards;
+}
+
+body.fade-in {
+    animation: fadeIn 1s forwards;
+    opacity: 0;
+}
+
+@keyframes fadeOut {
+    from { opacity: 1; }
+    to { opacity: 0; }
+}
+
+.action-button {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    border: none;
+    /* ... rest of your button styles ... */
+}
+
+.action-button:hover {
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+    /* ... */
+}

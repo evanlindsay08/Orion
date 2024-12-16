@@ -1,0 +1,208 @@
+.monitor-page {
+    background: transparent;
+    min-height: 100vh;
+    color: var(--text-primary);
+    overflow-y: auto;
+}
+
+.monitor-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 120px 2rem 4rem;
+    min-height: 100vh;
+}
+
+.monitor-header {
+    background: rgba(16, 22, 39, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    margin-bottom: 5rem;
+}
+
+.monitor-header h1 {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 700;
+    font-size: 3.5rem;
+    margin-bottom: 1rem;
+    text-transform: uppercase;
+    letter-spacing: 0.1rem;
+    color: var(--text-primary);
+    line-height: 1.2;
+}
+
+.monitor-form {
+    background: rgba(16, 22, 39, 0.5);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 12px;
+    padding: 3rem;
+    margin: 2rem;
+}
+
+.form-section {
+    margin-bottom: 3rem;
+}
+
+.form-section h2 {
+    color: var(--text-primary);
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+    letter-spacing: 0.1rem;
+    font-weight: 300;
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.form-group {
+    background: rgba(16, 22, 39, 0.7);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+}
+
+.form-group:hover {
+    border-color: var(--accent-color);
+}
+
+.form-group label {
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+    display: block;
+}
+
+.form-group input {
+    background: rgba(16, 22, 39, 0.5);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 4px;
+    padding: 0.8rem;
+    color: var(--text-primary);
+    width: 100%;
+}
+
+.submit-button {
+    background: linear-gradient(45deg, var(--primary-color), var(--accent-color));
+    border: none;
+    color: white;
+    padding: 1rem 3rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    letter-spacing: 0.1rem;
+    text-transform: uppercase;
+    font-weight: 500;
+}
+
+.submit-button:hover {
+    background: linear-gradient(45deg, var(--accent-color), var(--primary-color));
+    transform: translateY(-2px);
+}
+
+.site-title {
+    color: var(--neon-green);
+    display: flex;
+    align-items: center;
+    gap: 0.3rem;
+    font-size: 1rem;
+    letter-spacing: 0.1rem;
+    opacity: 1;
+}
+
+.terminal-icon {
+    font-size: 1rem;
+    color: var(--neon-green);
+}
+
+.title-text {
+    color: var(--neon-green);
+}
+
+.nav-links {
+    display: flex;
+    gap: 2rem;
+    margin-left: auto;
+    margin-right: 1rem;
+    align-items: center;
+}
+
+.nav-link {
+    color: white;
+    text-decoration: none;
+    font-size: 0.8rem;
+    letter-spacing: 0.1rem;
+    opacity: 0.8;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    opacity: 1;
+    color: white;
+}
+
+.nav-link.active {
+    opacity: 1;
+    color: var(--neon-green);
+}
+
+.main-nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 1.5rem 2rem;
+    background: var(--dark-bg);
+    border-bottom: 1px solid rgba(65, 147, 106, 0.2);
+    backdrop-filter: blur(10px);
+    z-index: 1000;
+}
+
+/* Add responsive grid for smaller screens */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Add/Update checkbox styles */
+.checkbox-group {
+    background: rgba(16, 22, 39, 0.7);
+    border: 1px solid rgba(66, 103, 178, 0.2);
+    border-radius: 8px;
+    padding: 1rem;
+    transition: all 0.3s ease;
+    display: flex;
+    align-items: center;
+}
+
+.checkbox-group label {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    cursor: pointer;
+    width: 100%;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+}
+
+.checkbox-group:hover {
+    border-color: var(--accent-color);
+}
+
+.checkbox-group input[type="checkbox"] {
+    width: auto;
+    margin: 0;
+    accent-color: var(--accent-color);
+    height: 16px;
+    width: 16px;
+} 
